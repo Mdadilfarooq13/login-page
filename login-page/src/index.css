@@ -1,66 +1,67 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Background */
 body {
-    background: url(https://images.unsplash.com/photo-1721170628208-dffed6eb3514?q=80&w=2070&auto=format&fit=cover&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background: url(https://i.pinimg.com/564x/fe/3c/0a/fe3c0a67fa8580bb4713093737de58bb.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: fill;
+    background-size: cover;
     height: 100%;
 }
-.container {
+
+/* Header Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    width: 100%;
+    box-sizing: border-box;
+}
+.header-left h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.header-right h1 {
+    margin: 0;
+    margin-right: 10px; 
+    font-size: 24px;
+    font-family: sans-serif;
+}
+.header-logo {
+    width: 40px;
+    height: auto;
+}
+
+/* Login Styling */
+.login-container {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    max-width: 500px;
     width: 100%;
     margin: auto;
 }
 .login-form {
     margin-top: 50px;
-    width: 80%;
+    width: 30%;
     border: 1px solid #dfdfdf;
     padding: 20px;
     border-radius: 5px;
     background: #fff;
-    box-shadow: 10px 10px;
+    box-shadow: 1px 1px;
 }
 .login-form-button {
     width: 100%;
 }
-.header {
-    display: flex;
-    justify-content: space-between; /* Space between left and right sections */
-    align-items: center; /* Vertically center the content */
-    padding: 20px;
-    background-color: #fff; /* Background color of the header */
-    border-bottom: 1px solid #dfdfdf; /* Optional: border at the bottom */
-    border-radius: 5px;
-    box-shadow: 10px 10px;
-  }
-  
-  .header-left h1 {
-    margin: 0;
-    font-size: 24px;
-    font-family: PPTelegraph-Regular, sans-serif; /* Ensure this font is loaded */
-  }
-  
-  .header-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-right h1 {
-    margin: 0;
-    margin-right: 10px; /* Space between "Blend" and the logo */
-    font-size: 24px;
-    font-family: PPTelegraph-Regular, sans-serif; /* Ensure this font is loaded */
-  }
-  
-  .header-logo {
-    width: 40px; /* Adjust size as needed */
-    height: auto;
-  }
