@@ -1,12 +1,3 @@
-/* Background */
-body {
-    background: url(https://i.pinimg.com/564x/fe/3c/0a/fe3c0a67fa8580bb4713093737de58bb.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-}
-
 /* Header Styling */
 body, html {
     margin: 0;
@@ -45,6 +36,10 @@ body, html {
 
 /* Login Styling */
 .login-container {
+    background: url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fill;
     display: flex !important;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +49,6 @@ body, html {
     margin: auto;
 }
 .login-form {
-    margin-top: 50px;
     width: 30%;
     border: 1px solid #dfdfdf;
     padding: 20px;
