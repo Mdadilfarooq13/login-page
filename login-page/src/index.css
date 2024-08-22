@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'PPTelegraf-Regular';
+    src: url(assets/PPTelegraf-Regular.ttf);
+}
+
+*{font-family: 'PPTelegraf-Regular';}
+
 /* Header Styling */
 body, html {
     margin: 0;
@@ -17,7 +24,6 @@ body, html {
 .header-left h1 {
     margin: 0;
     font-size: 24px;
-    font-family: sans-serif;
 }
 .header-right {
     display: flex;
@@ -27,7 +33,6 @@ body, html {
     margin: 0;
     margin-right: 10px; 
     font-size: 24px;
-    font-family: sans-serif;
 }
 .header-logo {
     width: 40px;
@@ -59,3 +64,9 @@ body, html {
 .login-form-button {
     width: 100%;
 }
+
+/* .ant-upload-list.ant-upload-list-text {
+    margin-top: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+} */

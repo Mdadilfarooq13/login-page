@@ -1,12 +1,13 @@
-import { Upload, Layout, Table } from 'antd';
+import { Upload, Layout, Table, Collapse, Button } from 'antd';
 import Sidebar from "../components/sidebar.js";
-import Header from '../components/header.js'
-import { InboxOutlined } from '@ant-design/icons';
+import Header from '../components/header.js';
+import { InboxOutlined, DeleteOutlined } from '@ant-design/icons';
 import React, { useState } from 'react';
 import Papa from 'papaparse';
 
 const { Content, Sider } = Layout;
 const Dragger = Upload.Dragger;
+const { Panel } = Collapse;
 
 function Input() {
   const [fileData, setFileData] = useState([]);
@@ -31,6 +32,7 @@ function Input() {
             fileName: file.name,
             columns: tableColumns,
             data: parsedData,
+            uid: file.uid,
           };
 
           setFileData(prevData => [...prevData, newData]);
@@ -40,6 +42,27 @@ function Input() {
     reader.readAsText(file);
     return false;
   };
+
+  const handleFileRemove = (uid) => {
+    setFileData(prevData => prevData.filter(item => item.uid !== uid));
+  };
+
+  const fileColumns = [
+    {
+      render: (_, record, index) => `${index+1}. ${record.fileName}`,
+    },
+    {
+      render: (_, record) => (
+        <div style={{ textAlign: 'right' }}>
+          <Button
+            type="text"
+            icon={<DeleteOutlined />}
+            onClick={() => handleFileRemove(record.uid)}
+          />
+        </div>
+      ),
+    },
+  ];
 
   const props = {
     name: 'file',
@@ -74,23 +97,32 @@ function Input() {
             bottom: 0,
             scrollbarWidth: 'thin',
             scrollbarColor: 'unset',
-            }}>
+          }}>
             <Dragger {...props}>
               <p className="ant-upload-drag-icon">
                 <InboxOutlined />
               </p>
               <p className="ant-upload-text">Click or drag files to this area to upload</p>
             </Dragger>
-            {fileData.map((file, index) => (
-              <div key={index} style={{ marginTop: 20 }}>
-                <h3>{file.fileName}</h3>
-                <Table
-                  dataSource={file.data}
-                  columns={file.columns}
-                  rowKey={(record) => record[file.columns[0]?.dataIndex]}
-                />
-              </div>
-            ))}
+            <Table
+              showHeader={false}
+              columns={fileColumns}
+              dataSource={fileData}
+              rowKey="uid"
+              size='small'
+              style={{ marginTop: 20 }}
+              pagination={false}
+            />
+            <Collapse style={{ marginTop: 20 }}>
+              {fileData.map((file) => (
+                <Panel header={file.fileName} key={file.uid}>
+                  <Table
+                    dataSource={file.data}
+                    columns={file.columns}
+                  />
+                </Panel>
+              ))}
+            </Collapse>
           </Content>
         </Layout>
       </Layout>
