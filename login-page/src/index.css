@@ -1,72 +1,91 @@
 @font-face {
-    font-family: 'PPTelegraf-Regular';
-    src: url(assets/PPTelegraf-Regular.ttf);
+  font-family: "PPTelegraf-Regular";
+  src: url(assets/PPTelegraf-Regular.ttf);
 }
 
-*{font-family: 'PPTelegraf-Regular';}
+* {
+  font-family: "PPTelegraf-Regular";
+}
 
 /* Header Styling */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 .header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px;
-    background-color: #fff;
-    border-bottom: 1px solid #dfdfdf;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #dfdfdf;
+  width: 100%;
+  box-sizing: border-box;
 }
 .header-left h1 {
-    margin: 0;
-    font-size: 24px;
+  margin: 0;
+  font-size: 24px;
 }
 .header-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .header-right h1 {
-    margin: 0;
-    margin-right: 10px; 
-    font-size: 24px;
+  margin: 0;
+  margin-right: 10px;
+  font-size: 24px;
 }
 .header-logo {
-    width: 40px;
-    height: auto;
+  width: 40px;
+  height: auto;
 }
 
 /* Login Styling */
 .login-container {
-    background: url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: fill;
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    margin: auto;
+  background: url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: fill;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
 }
 .login-form {
-    width: 30%;
-    border: 1px solid #dfdfdf;
-    padding: 20px;
-    border-radius: 5px;
-    background: #fff;
-    box-shadow: 1px 1px;
+  width: 30%;
+  border: 1px solid #dfdfdf;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 1px;
 }
 .login-form-button {
-    width: 100%;
+  width: 100%;
 }
 
 /* .ant-upload-list.ant-upload-list-text {
     margin-top: 20px;
     border: 1px solid #dfdfdf;
     border-radius: 5px;
+} */
+
+/* Editable Table */
+/* .editable-cell {
+  position: relative;
+}
+
+.editable-cell-value-wrap {
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.editable-row:hover .editable-cell-value-wrap {
+  padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
 } */

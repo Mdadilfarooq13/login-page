@@ -1,22 +1,27 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Layout } from 'antd';
-import { EyeOutlined, EyeInvisibleOutlined, UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
-import Header from '../components/header.js'
+import { Form, Input, Button, Layout } from "antd";
+import {
+  EyeOutlined,
+  EyeInvisibleOutlined,
+  UserOutlined,
+  LockOutlined,
+} from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/header.js";
 
 const { Content } = Layout;
 
 function Login() {
-  const [ showPassword, setShowPassword ] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log('Form values:', values);
-    navigate('/input');
+    console.log("Form values:", values);
+    navigate("/input_data");
   };
 
   return (
-    <Layout style={{ height: '100vh' }}>
+    <Layout style={{ height: "100vh" }}>
       <Header />
       <Content>
         <div className="login-container">
@@ -36,7 +41,7 @@ function Login() {
               rules={[
                 {
                   required: true,
-                  message: 'Please input your Username!',
+                  message: "Please input your Username!",
                 },
               ]}
             >
@@ -47,7 +52,7 @@ function Login() {
               rules={[
                 {
                   required: true,
-                  message: 'Please input your Password!',
+                  message: "Please input your Password!",
                 },
               ]}
             >
@@ -55,16 +60,33 @@ function Login() {
                 prefix={<LockOutlined />}
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                suffix={showPassword ? <EyeInvisibleOutlined onClick={() => {setShowPassword(!showPassword)}} /> : <EyeOutlined onClick={() => {setShowPassword(!showPassword)}} />}
+                suffix={
+                  showPassword ? (
+                    <EyeInvisibleOutlined
+                      onClick={() => {
+                        setShowPassword(!showPassword);
+                      }}
+                    />
+                  ) : (
+                    <EyeOutlined
+                      onClick={() => {
+                        setShowPassword(!showPassword);
+                      }}
+                    />
+                  )
+                }
               />
             </Form.Item>
             <Form.Item>
-              <a href="">
-                Forgot password?
-              </a>
+              <a href="">Forgot password?</a>
             </Form.Item>
             <Form.Item>
-              <Button id="login-btn" type="primary" htmlType="submit" className="login-form-button">
+              <Button
+                id="login-btn"
+                type="primary"
+                htmlType="submit"
+                className="login-form-button"
+              >
                 LOGIN
               </Button>
             </Form.Item>
@@ -73,6 +95,6 @@ function Login() {
       </Content>
     </Layout>
   );
-};
+}
 
 export default Login;
