@@ -3,9 +3,35 @@ import { MailOutlined, AppstoreOutlined, SettingFilled } from '@ant-design/icons
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-function Sidebar (){
-    return(
-        <Menu
+const items = [
+  {
+    key: "input-data",
+    label: "Input Data",
+  },
+  {
+    key: "editable-table",
+    label: "Editable Table",
+  },
+];
+
+function Sidebar() {
+  const navigate = useNavigate();
+
+  function handleClick(e) {
+    switch (e.key) {
+      case "input-data":
+        navigate("/input_data");
+        break;
+      case "editable-table":
+        navigate("/editable_table");
+        break;
+      default:
+        break;
+    }
+  }
+
+  return (
+    <Menu
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             mode="inline"
